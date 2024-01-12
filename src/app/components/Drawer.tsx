@@ -30,6 +30,8 @@ import { Product } from "../types/product";
 import { FaCartShopping, FaRegTrashCan, FaWhatsapp } from "react-icons/fa6";
 import { parseCurrency } from "../lib/utils";
 
+const WS_NUMBER = "xxxxxxxxxx";
+
 interface Props {
     carrito: Product[];
     order: string;
@@ -100,7 +102,7 @@ function DrawerExample({ carrito, order, resetCart }: Props) {
                 colorScheme="whatsapp"
                 margin="20px 0px"
                 as={Link}
-                href={`https://wa.me/${3537599073}?text=${encodeURIComponent(
+                href={`https://wa.me/${WS_NUMBER}?text=${encodeURIComponent(
                   order
                 )}`}
                 isExternal
