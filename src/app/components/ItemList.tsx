@@ -14,6 +14,7 @@ interface Props {
 
 export default function ItemList({ products } : Props) {
     const [cart, setCart] = useState<Product[]>([])
+    const [selectedImage, setSelectedImage] = useState<string | null>(null)
     const addToCart = (product: Product): void => {
       setCart(prevCart => [...prevCart, product])
     }
@@ -42,7 +43,7 @@ export default function ItemList({ products } : Props) {
           {
             products.map(
               (product) => (
-                <Item key={product.id} product={product} addToCart={addToCart}/>
+                <Item key={product.id} product={product} addToCart={addToCart} selectedImage={selectedImage} setSelectedImage={setSelectedImage}/>
               )
             )
           }
